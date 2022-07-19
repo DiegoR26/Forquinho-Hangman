@@ -242,6 +242,10 @@ main {
 
 @media (max-width: 650px) {
 
+    section {
+        overflow: visible;
+    }
+    
     main {
         margin: 2vh 18px;
     }
