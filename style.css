@@ -257,8 +257,12 @@ main {
     }
 
     #dicaforca {
-        right: 8.5%;
-        bottom: 11%;
+        right: 0.5;
+        bottom: 1%;
+        width: 100px;
+        height: 3em;
+        transform: rotate(0deg);
+        border: 1px solid red;
     }
     
     #imgforca {
