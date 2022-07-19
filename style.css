@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#resultado {
+    position: absolute;
+    margin: auto;
+    background-color: white;
+    width: 800px;
+    height: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.575);
+    display: none;
+}
+
+#resultado button {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: green;
+    border: 1px solid rgb(0, 59, 0);
+    color: white;
+    height: 80px;
+    width: 160px;
+    font-size: 1.3em;
+    border-radius: 10px;
+}
+
+#resultado button:hover {
+    background-color: rgb(2, 170, 2);
+    cursor: pointer;
+}
+
+#resultado button:active {
+    background-color: rgb(0, 66, 0);
+}
+
+#textoFinal {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#textoFinal div {
+    position: absolute;
+    width: 200px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    text-align: center;
+}
+
+#ganhou {
+    color: rgb(60, 192, 60);
+    display: none;
+}
+
+#perdeu {
+    color: rgb(100, 3, 3);
+    display: none;
+}
+
+section {
+    height: 100vh;
+    overflow: hidden;
+    max-width: 100%;
+    background: url('images/mesa.jpg') center no-repeat;
+    background-size: cover;   
+}
+
+header,
+footer {
+    height: 8vh;
+    min-height: 62px;
+    background-image: linear-gradient(64deg, rgb(202, 255, 202), rgb(122, 138, 118), rgb(62, 82, 55));
+    display: flex;
+    align-items: center;
+}
+
+header {
+    border-bottom: 2px solid gray;    
+}
+
+#titulo {
+    margin-left: 50px;
+    line-height: 20px;
+    font-size: 2em;
+    color: white;
+    cursor: default;
+    text-shadow: 0px 0px 6px black;
+}
+
+footer {
+    border-top: 2px solid gray;
+    flex-direction: column;
+}
+
+footer p,
+footer a {
+    margin-top: 5px;
+}
+
+footer p {
+    color: rgb(6, 32, 6);
+    cursor: default;
+}
+
+footer a {
+    color: white;
+    text-shadow: 0px 0px 6px black;
+    font-size: 1.1em;
+}
+
+main {
+    height: 80vh;
+    min-height: 620px;
+    max-width: 800px;
+    min-width: 300px;
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#imgforca {
+    background: url('images/papel0.png');
+    background-size: contain;
+    height: 200px;
+    width: 200px;
+    margin: 10px auto;
+
+}
+
+#palavraforca {
+    height: 2em;
+    width: 360px;
+    font-family: 'Schoolbell', cursive;
+    color: #225da5;
+    background: url('images/papel.png') center no-repeat;
+    background-size: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.575);
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.8em;
+    font-size: 1.7em;
+    cursor: default;
+}
+
+#dicaforca {
+    height: 1.5em;
+    width: 180px;
+    color: rgba(22, 13, 3, 0.63);
+    font-family: 'Schoolbell', cursive;
+    margin: 5px auto;
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 18%;
+    right: 10%;
+    transform: rotate(-37deg);
+
+}
+
+#dicaforca:hover {
+    text-shadow: 0px 0px 25px white;
+    transition: 0.5s;
+    cursor: help;
+}
+
+#teclado {
+    height: 160px;
+    width: 500px;
+    margin: 25px auto 2px auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    background: url('images/board.jpg') no-repeat center;
+    background-size: cover;
+    border: 4px outset rgb(139, 116, 58);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.473);
+}
+
+.tecla {
+    font-family: 'Schoolbell', cursive;
+    font-weight: 400;
+    color: white;
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    text-align: center;
+    line-height: 50px;
+}
+
+.tecla:hover {
+    transform: scale(1.1);
+    color: rgb(255, 230, 0);
+    cursor: pointer;
+}
+
+.tecla:active {
+    transform: scale(1);
+}
+
+#refresh {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background-image: url('images/refresh.png');
+    background-size: contain;
+    border: 1px solid rgb(0, 59, 0);
+    border-radius: 30px;
+}
+
+#refresh:hover {
+    background-color: rgb(200, 255, 200);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.877);
+    cursor: pointer;
+}
+
+#refresh:active {
+    background-color: rgb(108, 233, 108);
+    transform: scale(1);
+    
+}
+
+@media (max-width: 650px) {
+
+    main {
+        margin: 2vh 18px;
+    }
+    
+    #teclado {
+        width: 280px;
+        height: 330px;
+        margin: 5px auto 2px auto;
+    }
+
+    #dicaforca {
+        right: 0.5%;
+        bottom: 15%;
+    }
+    
+    #imgforca {
+        height: 125px;
+        width: 125px;
+    
+    }
+
+    #resultado {
+        width: 400px;
+        height: 550px;
+    }
+
+}
+
