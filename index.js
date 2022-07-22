@@ -213,168 +213,6 @@ const palavras = [
     'nome':'BICARBONATO',
     'dica':'Cozinha'
     
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
-},
-
-{
-    'nome':'FINADOS',
-    'dica':'Feriado'
-    
 }
 
 ]
@@ -416,19 +254,22 @@ const teclaLetra = document.querySelectorAll('.tecla').forEach(teclaLetra => {
 
     /* ================= Função ganha/perde =============== */
         if (palavraArray.includes('_') === false) {
-            resultado.setAttribute('style', 'display:block;')
-            ganhou.setAttribute('style', 'display:block;')
-            tela.setAttribute('style', 'filter: blur(2px);')
-
+            setTimeout(() => {
+                resultado.setAttribute('style', 'display:block;')
+                ganhou.setAttribute('style', 'display:block;')
+                tela.setAttribute('style', 'filter: blur(2px);')
+            }, 500)
         }
         
         if (palavraDiv.includes(letra) === false) {
             numErro++
 
             if (numErro >= 6) {
-                resultado.setAttribute('style', 'display:block;')
-                perdeu.setAttribute('style', 'display:block;')
-                tela.setAttribute('style', 'filter: blur(2px);')
+                setTimeout(() => {
+                    resultado.setAttribute('style', 'display:block;')
+                    perdeu.setAttribute('style', 'display:block;')
+                    tela.setAttribute('style', 'filter: blur(2px);')
+                }, 500)
             }
             
             switch (numErro) {

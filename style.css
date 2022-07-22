@@ -5,6 +5,8 @@
     padding: 0;
 }
 
+/*===================== Resultado Final =========================*/
+
 #resultado {
     position: absolute;
     margin: auto;
@@ -48,7 +50,6 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 #textoFinal div {
@@ -71,29 +72,36 @@
     display: none;
 }
 
+/*====================== Tela Principal ========================*/
+
 section {
     height: 100vh;
-    overflow: hidden;
-    max-width: 100%;
-    background: url('images/mesa.jpg') center no-repeat;
-    background-size: cover;   
+    max-width: 100%; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    background-image: linear-gradient(90deg, rgb(48, 24, 17), black, black, black, rgb(48, 24, 17));
 }
 
 header,
 footer {
-    height: 8vh;
-    min-height: 62px;
+    min-height: 10%px;
     background-image: linear-gradient(64deg, rgb(202, 255, 202), rgb(122, 138, 118), rgb(62, 82, 55));
     display: flex;
     align-items: center;
 }
 
 header {
-    border-bottom: 2px solid gray;    
+    border-bottom: 2px solid gray;
+    justify-content: space-around;
+    grid-area: header; 
 }
 
 #titulo {
-    margin-left: 50px;
     line-height: 20px;
     font-size: 2em;
     color: white;
@@ -104,11 +112,8 @@ header {
 footer {
     border-top: 2px solid gray;
     flex-direction: column;
-}
-
-footer p,
-footer a {
-    margin-top: 5px;
+    padding: 10px;
+    grid-area: footer;
 }
 
 footer p {
@@ -122,14 +127,28 @@ footer a {
     font-size: 1.1em;
 }
 
+/*=============== Conteudo do jogo ==============*/
+
 main {
-    height: 80vh;
-    min-height: 620px;
-    max-width: 800px;
+    max-width: 1200px;
     min-width: 300px;
-    margin: 2vh auto;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    min-height: 80%;
+    margin: 0 auto;
+    background-image: url("images/mesa.jpg");
+    background-size: cover;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-areas: "papel quadro mesa";
+}
+
+/*============== Papel ===================*/
+
+#papel {
+    display: grid;
+    gap: 20px;
+    grid-area: papel;
 }
 
 #imgforca {
@@ -141,22 +160,6 @@ main {
 
 }
 
-#palavraforca {
-    height: 2em;
-    width: 360px;
-    font-family: 'Schoolbell', cursive;
-    color: #225da5;
-    background: url('images/papel.png') center no-repeat;
-    background-size: auto;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.575);
-    margin: 0 auto;
-    text-align: center;
-    letter-spacing: 0.1em;
-    line-height: 1.8em;
-    font-size: 1.7em;
-    cursor: default;
-}
-
 #dicaforca {
     height: 1.5em;
     width: 180px;
@@ -166,10 +169,6 @@ main {
     text-align: center;
     line-height: 1.5em;
     font-size: 1.2em;
-    position: absolute;
-    bottom: 18%;
-    right: 10%;
-    transform: rotate(-37deg);
 
 }
 
@@ -179,21 +178,49 @@ main {
     cursor: help;
 }
 
+/*================= Quadro ====================*/
+
+#quadro {
+    grid-area: quadro;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#quadroInterno {
+    background: url('images/board.jpg') no-repeat center;
+    background-size: cover;
+    border: 4px outset rgb(139, 116, 58);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.473);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: center;
+    min-width: 330px;
+    height: 280px;
+    gap: 20px;
+}
+
+
+#palavraforca {
+    font-family: 'Schoolbell', cursive;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1.8em;
+    font-size: 1.7em;
+    cursor: default;
+}
+
+
 #teclado {
-    height: 160px;
-    width: 500px;
-    margin: 25px auto 2px auto;
-    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
     padding: 5px;
-    background: url('images/board.jpg') no-repeat center;
-    background-size: cover;
-    border: 4px outset rgb(139, 116, 58);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.473);
 }
 
 .tecla {
@@ -208,7 +235,7 @@ main {
 }
 
 .tecla:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     color: rgb(255, 230, 0);
     cursor: pointer;
 }
@@ -217,52 +244,72 @@ main {
     transform: scale(1);
 }
 
+/*============== Mesa ============*/
+
+#mesa {
+    grid-area: mesa;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
 #refresh {
     width: 60px;
     height: 60px;
-    margin: auto;
     background-image: url('images/refresh.png');
     background-size: contain;
-    border: 1px solid rgb(0, 59, 0);
     border-radius: 30px;
 }
 
 #refresh:hover {
     background-color: rgb(200, 255, 200);
-    transform: scale(1.05);
     box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.877);
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 #refresh:active {
     background-color: rgb(108, 233, 108);
     transform: scale(1);
-    
 }
 
-@media (max-width: 650px) {
+/*====================== Mobile =====================*/
 
-    section {
-        overflow: visible;
-    }
-    
+@media (max-width: 650px) {
+   
     main {
-        margin: 2vh 18px;
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: auto 85% auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            ". papel mesa" 
+            ". quadro mesa"
+            ". quadro mesa";
+    }
+
+    #papel {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #quadroInterno {
+        min-width: 300px;
+        height: 390px;
+        gap: 0;
     }
     
     #teclado {
         width: 280px;
-        height: 330px;
+        height: 300px;
         margin: 5px auto 2px auto;
     }
 
     #dicaforca {
-        right: 0.5;
-        bottom: 1%;
         width: 100px;
         height: 3em;
-        transform: rotate(0deg);
-        border: 1px solid red;
+        
     }
     
     #imgforca {
@@ -276,5 +323,9 @@ main {
         height: 550px;
     }
 
-}
+    #refresh {
+        margin-left: -40%;
+        margin-bottom: -30%;
+    }
 
+}
